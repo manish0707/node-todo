@@ -12,14 +12,14 @@ mongoose.connect(DATABASE_PATH, {
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   return res.json({ message: "App worked!" });
 });
 
-app.use('/api', router);
+app.use("/api", router);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("App is listening at port 3000");
 });
