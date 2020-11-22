@@ -55,12 +55,30 @@ module.exports = {
   },
   // Responding with todo by id
   getTodo: (req, res) => {
-      if(req.todo) {
-          return res.status(200).json({
-              success: true,
-              message: "Todo fetch successFully!",
-              todo: req.todo,
-          })
+    if (req.todo) {
+      return res.status(200).json({
+        success: true,
+        message: "Todo fetch successFully!",
+        todo: req.todo,
+      });
+    }
+  },
+  // Deleting todo with id
+  removeTodo: (req, res) => {
+    const { todo } = req;
+    todo.remove((err, todo) => {
+      if (err) {
+        return res.status(400).json({
+          success: false,
+          message: "Something went wrong!",
+          todo,
+        });
       }
-  }
+      return res.status(200).json({
+        success: true,
+        message: "Todo deleted successfully!",
+        todo,
+      });
+    });
+  },
 };
