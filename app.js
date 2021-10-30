@@ -1,13 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { DATABASE_PATH } = require("./constants");
-const router = require("./Routes/TodoRoutes");
+const router = require("./routes/TodoRoutes");
 
 // Connecting to DB
-mongoose.connect(DATABASE_PATH, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(DATABASE_PATH, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Database Connected"))
+  .catch((err) => console.error(err));
 
 const app = express();
 
