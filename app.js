@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", router);
-
+console.log("Testing console log");
 app.listen(process.env.PORT || 5000, () => {
   console.log("App is listening at port 3000");
 });
