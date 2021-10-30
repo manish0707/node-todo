@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   return res.json({ message: "App worked!" });
 });
-
+// Addded bhavnesh sharma in this file
 app.use("/api", router);
 console.log("Testing console log");
 app.listen(process.env.PORT || 5000, () => {
