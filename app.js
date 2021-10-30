@@ -8,7 +8,8 @@ mongoose.connect(DATABASE_PATH, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
+const add=(num1,num2)=>num1+num2;
+console.log(add(3,5));
 const app = express();
 
 app.use(express.json());
