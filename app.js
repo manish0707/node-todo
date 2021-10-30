@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { DATABASE_PATH } = require("./constants");
 const router = require("./Routes/TodoRoutes");
-//test text
+//I changed Text
 // Connecting to DB
 mongoose.connect(DATABASE_PATH, {
   useNewUrlParser: true,
@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+// Changed sometext near add function
 app.get("/", (req, res) => {
   return res.json({ message: "App worked!" });
 });
