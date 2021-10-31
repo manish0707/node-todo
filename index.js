@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const router = require("./routes/todoRoutes");
 const { DATABASE_PATH } = require("./constants");
-const router = require("./routes/TodoRoutes");
 
 // Connecting to DB
 mongoose
