@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { DATABASE_PATH } = require("./constants");
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("App is listening at port 3000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`App is listening on port ${PORT}`);
 });
